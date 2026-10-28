@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smart Store - Your Inventory Destination</title>
     <link rel="stylesheet" href="css/main.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700&display=swap"
+        rel="stylesheet">
 </head>
+
 <body class="fade-in">
     <div class="app-wrapper">
         <nav class="navbar">
             <a href="index.html" class="nav-brand">
                 <span>🏢</span> Smart Store
             </a>
-            
+
             <div id="main-nav-links" class="nav-links">
                 <!-- Navigation links will be injected by utils.js -->
             </div>
@@ -25,12 +29,16 @@
 
         <main class="main-content">
             <!-- Hero Section -->
-            <section class="hero" style="margin-bottom: 3rem; text-align: center; background: var(--grad-primary); color: white; padding: 4rem 2rem; border-radius: var(--radius-2xl);">
+            <section class="hero"
+                style="margin-bottom: 3rem; text-align: center; background: var(--grad-primary); color: white; padding: 4rem 2rem; border-radius: var(--radius-2xl);">
                 <h1 style="font-size: 3rem; margin-bottom: 1rem;">Welcome to the Future of Shopping</h1>
-                <p style="font-size: 1.25rem; opacity: 0.9; max-width: 600px; margin: 0 auto 2rem;">Browse our premium selection of products with real-time inventory tracking and seamless ordering.</p>
+                <p style="font-size: 1.25rem; opacity: 0.9; max-width: 600px; margin: 0 auto 2rem;">Browse our premium
+                    selection of products with real-time inventory tracking and seamless ordering.</p>
                 <div style="max-width: 500px; margin: 0 auto; display: flex; gap: 0.5rem;">
-                    <input type="text" id="landing-search" class="form-control" style="background: white;" placeholder="Search products, SKUs, or categories...">
-                    <button class="btn btn-primary" style="background: var(--slate-900); white-space: nowrap;">Search Now</button>
+                    <input type="text" id="landing-search" class="form-control" style="background: white;"
+                        placeholder="Search products, SKUs, or categories...">
+                    <button class="btn btn-primary" style="background: var(--slate-900); white-space: nowrap;">Search
+                        Now</button>
                 </div>
             </section>
 
@@ -38,12 +46,14 @@
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
                 <h2>Browse Products</h2>
                 <div style="display: flex; gap: 0.5rem;" id="category-chips">
-                    <button class="btn btn-secondary category-chip active" data-category="all" onclick="filterProducts('all', currentProducts)">All Items</button>
+                    <button class="btn btn-secondary category-chip active" data-category="all"
+                        onclick="filterProducts('all', currentProducts)">All Items</button>
                 </div>
             </div>
 
             <!-- Product Grid -->
-            <div id="product-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem;">
+            <div id="product-grid"
+                style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2rem;">
                 <!-- Products will be injected by JavaScript -->
                 <div style="grid-column: 1/-1; text-align: center; padding: 4rem;">
                     <div class="stat-value">Loading Products...</div>
@@ -60,20 +70,22 @@
                 <span class="close-modal" onclick="closeBuyModal()">&times;</span>
             </div>
             <div class="modal-body">
-                <div id="checkout-product-info" style="margin-bottom: 1.5rem; display: flex; gap: 1rem; align-items: center;">
+                <div id="checkout-product-info"
+                    style="margin-bottom: 1.5rem; display: flex; gap: 1rem; align-items: center;">
                     <div style="font-size: 2rem;" id="checkout-emoji">🛍️</div>
                     <div>
                         <h3 id="checkout-name">Product Name</h3>
                         <p id="checkout-price" style="color: var(--primary-600); font-weight: 700;">$0.00</p>
                     </div>
                 </div>
-                
+
                 <form id="order-form">
                     <input type="hidden" id="order-product-id">
                     <div class="form-group">
                         <label class="form-label">Quantity</label>
                         <input type="number" id="order-quantity" class="form-control" value="1" min="1" required>
-                        <p id="stock-hint" style="font-size: 0.75rem; color: var(--slate-500); margin-top: 0.25rem;">Checking availability...</p>
+                        <p id="stock-hint" style="font-size: 0.75rem; color: var(--slate-500); margin-top: 0.25rem;">
+                            Checking availability...</p>
                     </div>
                     <div class="form-group">
                         <label class="form-label">Payment Method</label>
@@ -86,27 +98,35 @@
 
                     <div class="form-group">
                         <label class="form-label">Shipping Address</label>
-                        <textarea id="order-address" class="form-control" rows="2" placeholder="Enter your delivery address" required></textarea>
+                        <textarea id="order-address" class="form-control" rows="2"
+                            placeholder="Enter your delivery address" required></textarea>
                     </div>
-                    
-                    <div style="background: var(--slate-50); padding: 1rem; border-radius: var(--radius-md); margin-top: 1rem;">
+
+                    <div
+                        style="background: var(--slate-50); padding: 1rem; border-radius: var(--radius-md); margin-top: 1rem;">
                         <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
                             <span>Subtotal:</span>
                             <span id="order-subtotal">$0.00</span>
                         </div>
-                        <div style="display: flex; justify-content: space-between; font-weight: 700; font-size: 1.1rem; border-top: 1px solid var(--slate-200); padding-top: 0.5rem; margin-top: 0.5rem;">
+                        <div
+                            style="display: flex; justify-content: space-between; font-weight: 700; font-size: 1.1rem; border-top: 1px solid var(--slate-200); padding-top: 0.5rem; margin-top: 0.5rem;">
                             <span>Total Payable:</span>
                             <span id="order-total">$0.00</span>
                         </div>
                     </div>
 
-                    <div id="upi-section" style="display: none; margin-top: 1rem; text-align: center; background: rgba(99, 102, 241, 0.05); padding: 1rem; border-radius: var(--radius-md); border: 1px dashed var(--primary-300);">
-                        <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">Scan QR or use UPI ID: <b>smartinv@upi</b></p>
-                        <button type="button" id="pay-now-btn" class="btn btn-primary" style="background: var(--accent-emerald); border-color: var(--accent-emerald);">Pay Now</button>
+                    <div id="upi-section"
+                        style="display: none; margin-top: 1rem; text-align: center; background: rgba(99, 102, 241, 0.05); padding: 1rem; border-radius: var(--radius-md); border: 1px dashed var(--primary-300);">
+                        <p style="font-size: 0.9rem; margin-bottom: 0.5rem;">Scan QR or use UPI ID: <b>smartinv@upi</b>
+                        </p>
+                        <button type="button" id="pay-now-btn" class="btn btn-primary"
+                            style="background: var(--accent-emerald); border-color: var(--accent-emerald);">Pay
+                            Now</button>
                     </div>
 
                     <div style="margin-top: 1.5rem;">
-                        <button type="submit" id="confirm-order-btn" class="btn btn-primary" style="width: 100%;">Confirm & Place Order</button>
+                        <button type="submit" id="confirm-order-btn" class="btn btn-primary"
+                            style="width: 100%;">Confirm & Place Order</button>
                     </div>
                 </form>
             </div>
@@ -129,7 +149,7 @@
                 const data = await apiCall('/products');
                 currentProducts = data.products || [];
                 renderProducts(currentProducts);
-                
+
                 // Extract categories for chips
                 const categories = [...new Set(currentProducts.map(p => p.category))];
                 const chipContainer = document.getElementById('category-chips');
@@ -145,8 +165,8 @@
                 // Search logic
                 document.getElementById('landing-search').oninput = (e) => {
                     const term = e.target.value.toLowerCase();
-                    const filtered = currentProducts.filter(p => 
-                        p.product_name.toLowerCase().includes(term) || 
+                    const filtered = currentProducts.filter(p =>
+                        p.product_name.toLowerCase().includes(term) ||
                         p.sku.toLowerCase().includes(term) ||
                         p.category.toLowerCase().includes(term)
                     );
@@ -163,7 +183,7 @@
                 grid.innerHTML = '<div style="grid-column:1/-1; text-align:center; padding:4rem;">No products found matching your criteria.</div>';
                 return;
             }
-            
+
             grid.innerHTML = products.map(p => {
                 const emoji = getEmojiByCategory(p.category);
                 const imageSection = p.image_url
@@ -204,9 +224,9 @@
 
         function filterProducts(category, all, event) {
             document.querySelectorAll('.category-chip').forEach(c => c.classList.remove('active'));
-            if(event) event.target.classList.add('active');
+            if (event) event.target.classList.add('active');
             else document.querySelector('[data-category="all"]').classList.add('active');
-            
+
             if (category === 'all') {
                 renderProducts(all);
             } else {
@@ -229,13 +249,13 @@
             document.getElementById('checkout-price').textContent = formatCurrency(parseFloat(p.unit_price));
             document.getElementById('checkout-emoji').textContent = getEmojiByCategory(p.category);
             document.getElementById('stock-hint').textContent = `Available stock: ${p.quantity_in_stock}`;
-            
+
             const qtyInput = document.getElementById('order-quantity');
             qtyInput.value = 1;
             qtyInput.max = p.quantity_in_stock;
-            
+
             updateTotals(p.unit_price, 1);
-            
+
             document.getElementById('buy-modal').style.display = 'block';
         }
 
@@ -307,7 +327,7 @@
                     await apiCall('/orders', 'POST', payload);
                     alert('Order placed successfully!');
                     closeBuyModal();
-                    loadProducts(); 
+                    loadProducts();
                 } catch (error) {
                     alert(error.message);
                 }
@@ -338,13 +358,22 @@
             document.getElementById('order-form').reset();
         }
 
-        window.onclick = (e) => { 
+        window.onclick = (e) => {
             if (e.target == document.getElementById('buy-modal')) closeBuyModal();
         };
     </script>
     <style>
-        .product-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-xl); }
-        .category-chip.active { background: var(--primary-600); color: white; border-color: var(--primary-600); }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .category-chip.active {
+            background: var(--primary-600);
+            color: white;
+            border-color: var(--primary-600);
+        }
     </style>
 </body>
+
 </html>
